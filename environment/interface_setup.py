@@ -1,5 +1,5 @@
-#file_name = "/etc/network/interfaces"
-file_name =  "UnitTest/interfaces"
+file_name = "/etc/network/interfaces"
+#file_name =  "UnitTest/interfaces"
 
 with open(file_name,'r') as f:
 	for line in f:

@@ -1,7 +1,7 @@
 import sys
 
-file_name = "UnitTest/hosts"
-
+#file_name = "UnitTest/hosts"
+file_name = "/etc/hosts"
 ip = []
 block_storage_ip = []
 
