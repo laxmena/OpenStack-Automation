@@ -1,8 +1,8 @@
 import ConfigParser
 import sys
 
-#file_name = "/etc/mysql/mariadb.conf.d/50-server.cnf"
-file_name = "UnitTest/50-server.cnf"
+file_name = "/etc/mysql/mariadb.conf.d/50-server.cnf"
+#file_name = "UnitTest/50-server.cnf"
 ip = sys.argv[1]
 
 config = ConfigParser.RawConfigParser(allow_no_value=True)

@@ -3,8 +3,8 @@ import ConfigParser
 
 ip = sys.argv[1]
 
-#file_name = "/etc/glance/glance-api.conf"
-file_name = "UnitTest/glance-api.conf"
+file_name = "/etc/glance/glance-api.conf"
+#file_name = "UnitTest/glance-api.conf"
 
 config = ConfigParser.ConfigParser(allow_no_value=True)
 config.read(file_name)
@@ -24,7 +24,7 @@ config.set('glance_store','filesystem_store_datadir','/var/lib/glance/images/')
 
 config.set('database','connection','mysql+pymysql://glance:GLANCE_DBPASS@'+ip+'/glance')
 
-config['keystone_authtoken'] = {}
+
 config.set('keystone_authtoken','auth_uri','http://'+ip+':5000')
 config.set('keystone_authtoken','auth_url','http://'+ip+':35357')
 config.set('keystone_authtoken','memcached_servers',''+ip+':11211')
@@ -40,8 +40,8 @@ config.set('paste_deploy','flavor','keystone')
 with open(file_name, 'wb') as configfile:
     config.write(configfile)
 
-#file_name = "/etc/glance/glance-registry.conf"
-file_name = "UnitTest/glance-registry.conf"
+file_name = "/etc/glance/glance-registry.conf"
+#file_name = "UnitTest/glance-registry.conf"
 if 'database' not in config.sections():
 	config.add_section('database')
 if 'keystone_authtoken' not in config.sections():
@@ -51,7 +51,6 @@ if 'paste_deploy' not in config.sections():
 
 config.set('database','connection','mysql+pymysql://glance:GLANCE_DBPASS@'+ip+'/glance')
 
-config['keystone_authtoken'] = {}
 config.set('keystone_authtoken','auth_uri','http://'+ip+':5000')
 config.set('keystone_authtoken','auth_url','http://'+ip+':35357')
 config.set('keystone_authtoken','memcached_servers',''+ip+':11211')
