@@ -32,7 +32,7 @@ read mysql_pass
 
 	#Call Python Script 
 	#python environment/glance_setup.py $management_ip
-	python environment/glance_setup.py 10.0.10.0
+	python Image/glance_setup.py 10.0.10.0
 	su -s /bin/sh -c "glance-manage db_sync" glance
 	service glance-registry restart
 	service glance-api restart
